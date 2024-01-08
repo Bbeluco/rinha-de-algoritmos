@@ -1,0 +1,28 @@
+Interpretacao do problema:
+
+Quantidade de sementes = n
+v1 = valor que ganha ao plantar uma semente X
+w1 = Quantidade de espaco que ocupa plantar uma semente X
+W = Total do terreno
+
+
+Exemplo_01.txt:
+	Primeira linha = n total e W
+	Para cada linha abaixo:
+		w1 e v1
+		
+		
+		
+Limites:
+	n sempre vai ser um inteiro entre 1 e 1000
+	v1 sempre vai ser entre 30 e 200
+	w1 sempre vai ser entre 1 e 7
+	W sempre vai ser entre 1 e 2666
+	
+	
+Ideias:
+Ideia n1 (nao se importanto com performance e sim com resultado)
+	1 -> Criar um vetor de vetores (esse cara vai conter todos os numeros ordenados exemplo: vector com apenas elementos de 4 slotes, vetor com elementos de 3 slotes, 2 slotes e 1 slote)
+	2 -> Cada um desses vetores sera ordenado de forma crescente (Como eh uma pilha, depois nosso objetivo vai ser retirar cada um dos items presentes e teremos que comecar do final pro comeco)
+	3 -> Iremos comparar o que vale mais a pena? Utilizar 1 semente de 4 slotes? 2 sementes uma com 1 e outra com 3? 1 semente uma com 2 e outra com 2? 4 sementes de 1?
+	3.1 -> Quando achar a combinacao que vamos usar, remover os itens utilizados E diminuir a qtd de terra disponivel
