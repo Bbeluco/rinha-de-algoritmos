@@ -40,15 +40,10 @@ int calculateEarns(std::vector<VectorPair>& groups, int& total_land) {
     1 + 1 + 1 + 1/ 4?
     */
     while(total_land > 0) {
-        std::cout << "total_land: " << total_land << '\n';
-        std::cout << "total_earns: " << total_earns << '\n';
-
-        std::cout << '\n';
-
         Pair maior_numero_individual{0, 0};
         for(size_t i{0}; i < groups.size(); ++i) {
             Pair grupo_atual{ groups[i][groups[i].size() - 1] };
-            if(maior_numero_individual.second < grupo_atual.second){
+            if(maior_numero_individual.second < grupo_atual.second && grupo_atual.first <= total_land){
                 maior_numero_individual.first = grupo_atual.first;
                 maior_numero_individual.second = grupo_atual.second;
             }
@@ -86,8 +81,8 @@ int main() {
     std::clock_t start, end;
     start = clock();
 
-    int total_land{ 36 };
-    VectorPair space_and_earn_per_seed{ {3,86},{1,80},{3,71},{2,39},{2,53},{3,47},{2,46},{1,32},{1,69},{2,89},{4,58},{3,86},{3,54},{3,53},{1,64},{4,82},{1,46},{2,48},{4,53},{1,68},{3,94},{1,87} };
+    int total_land{ 10 };
+    VectorPair space_and_earn_per_seed{ {3,44},{1,78},{2,64},{1,49},{4,69},{1,87},{3,78},{2,45},{3,84} };
     std::vector<VectorPair> groups(4);
 
     populateGroups(space_and_earn_per_seed, groups);
